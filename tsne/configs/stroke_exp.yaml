@@ -1,0 +1,30 @@
+# Folder path of data location
+data_path: "some_path/stroke_analysis_turtorials/data/" # You work directory, in your case stroke_exp
+
+# Folder path of metadata
+meta_path: "some_path/stroke_analysis_turtorials/data/metadata.csv"
+
+# Output folder of all plots
+out_path: "some_path/stroke_analysis_turtorials/results/your_tsne_output_folder_name"
+
+# File path of skeletal specifications
+skeleton_path: "your_neuroposelib_repo_path/neuroposelib/src/neuroposelib/skeletons.py"
+
+# Key of skeleton in the skeletons file
+skeleton_name: "mouse20_notail"
+
+label: "fitsne"
+downsample: 10 # recommended not change, fixed in previous tdunn experiments
+
+# Parameters for t-SNE embedding
+single_embed:
+  method: "fitsne"
+  perplexity: 50 # you can change this for different tsne results
+  lr: "auto"
+  sigma: 30 # you can change this for more or less cluster for same tsne result
+
+# Parameters for embedding new data into an existing t-SNE embedding. Not really working, please ignore.
+transform_embed:
+  method: "knn"
+  k: 5
+  sigma: 15
